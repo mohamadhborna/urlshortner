@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/borna/.dotnet/store/|arch|/|tfm|",
+      "/home/borna/.nuget/packages"
+    ]
+  }
+}
