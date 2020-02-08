@@ -84,6 +84,26 @@ namespace test
                .AssertAll();
 
         }
+         [Fact]
+        public void SupportUtf8Test()
+        {  
+            var body = new{
+                url ="http://varzesh3.com/99-98-جدول-لیگ-برتر-ایران"
+            };
+
+            new RestAssured()
+            .Given()
+              .Name("Test Empty Get")
+              .Header("Content-Type","application/json")
+              //.Header("Accept-Encoding","utf-8")
+              .Body(body)
+            .When()
+               .Post("http://localhost:5000/urls")
+               .Then()
+               .TestStatus("test Empty Get",r => r==200)
+               .AssertAll();
+
+        }
 
         // }
 
