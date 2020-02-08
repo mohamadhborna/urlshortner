@@ -40,6 +40,19 @@ namespace test
                .AssertAll();
         
         }
+        [Fact]
+        public void GetNotExistEndPoint(){
+             new RestAssured()
+            .Given()
+              .Name("Test Empty Get")
+              .Header("Content-Type","application/json")
+              .Header("Accept-Encoding","utf-8")
+            .When()
+               .Get("http://localhost:5000/redirect/asgharqq")
+               .Then()
+               .TestStatus("test Empty Get",r => r==404)
+               .AssertAll();
+        }
        
         
 
