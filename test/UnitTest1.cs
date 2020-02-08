@@ -23,6 +23,23 @@ namespace test
                .TestStatus("test Empty Get",r => r==400)
                .AssertAll();
         }
+        [Fact]
+        public void PostEmptyTest()
+        {
+        //Given
+            new RestAssured()
+            .Given()
+              .Name("Test Empty Get")
+              .Header("Content-Type","application/json")
+              .Header("Accept-Encoding","utf-8")
+              .Body("")
+            .When()
+               .Post("http://localhost:5000/urls")
+               .Then()
+               .TestStatus("test Empty Get",r => r==400)
+               .AssertAll();
+        
+        }
        
         
 
