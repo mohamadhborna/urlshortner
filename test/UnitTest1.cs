@@ -69,6 +69,21 @@ namespace test
                .AssertAll();
 
         }
+        [Fact]
+        public void GetNot8CharacterUrl()
+        {
+             new RestAssured()
+            .Given()
+              .Name("Test Empty Get")
+              .Header("Content-Type","application/json")
+              .Header("Accept-Encoding","utf-8")
+            .When()
+               .Get("http://localhost:5000/redirect/abc")
+               .Then()
+               .TestStatus("test Empty Get",r => r==400)
+               .AssertAll();
+
+        }
 
         // }
 
